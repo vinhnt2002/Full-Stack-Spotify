@@ -71,7 +71,7 @@ const UploadModal = () => {
       const { data: imageData, error: imageError } =
         await supabaseClient.storage
           .from("images")
-          .upload(`image-${values.title}-${uniqueID} `, imageFile, {
+          .upload(`image-${values.title}-${uniqueID}`, imageFile, {
             cacheControl: "3600",
             upsert: false,
           });
