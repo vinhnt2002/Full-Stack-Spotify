@@ -2,6 +2,7 @@ import useLoadImage from "@/hooks/useLoadImage";
 import { Song } from "@/type";
 import Image from "next/image";
 import React from "react";
+import PlayButton from "../MusicPlayer/PlayButton";
 
 interface SongItemProps {
   data: Song;
@@ -42,16 +43,29 @@ const SongItem: React.FC<SongItemProps> = ({ data, onClick }) => {
       "
       >
         <Image
-        className="object-cover"
-        src={imagePath || '/images/liked.png'}
-        fill
-        alt="image"
+          className="object-cover"
+          src={imagePath || "/images/liked.png"}
+          fill
+          alt="image"
         />
 
         {/* <img src={imagePath } alt="image" /> */}
       </div>
-      <div>{data.title}</div>
-      <div>{data.author}</div>
+      <div className="flex flex-col items-start p-4 gap-y-2">
+        <p className="font-semibold truncate w-full">{data.title}</p>
+
+        <p className="text-neutral-400 truncate w-full pb-2">{data.author}</p>
+      </div>
+
+      <div
+        className="
+        absolute
+        bottom-24
+        right-5
+      "
+      >
+        <PlayButton/>
+      </div>
     </div>
   );
 };

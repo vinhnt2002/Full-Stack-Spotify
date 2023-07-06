@@ -1,5 +1,5 @@
 "use client";
-import SongItem from "@/components/Song/SongItem";
+import SongItem from "@/components/Item/SongItem";
 import { Song } from "@/type";
 
 interface PageContentProps {
